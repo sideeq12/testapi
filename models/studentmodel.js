@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
-const studentSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+const objectId = Schema.ObjectId;
+
+const studentSchema = new Schema({
+    student_number : objectId,
     first_name : {
         type : String,
         required : [true, "please enter a valid first name"]

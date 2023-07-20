@@ -1,5 +1,5 @@
 const express = require("express");
-
+const Model = require("../models/studentmodel");
 const router  = express.Router();
 
 router.route("/")
@@ -9,9 +9,13 @@ router.route("/")
     })
 })
 .post((req, res)=>{
-    res.status(200).json({
-        msg : "success post"
-    })
+    const { first_name , last_name , other } = req.body;
+    try { 
+        const newStudent = Model.create(req.body);
+        res.status(200).send(newStudent);
+    }catch(err){
+        console.log(err);
+    }
 })
 .put((req, res)=>{
     res.status(200).json({
