@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 
 
 const app = express();
+const studentRouters = require("./routes/studentroutes");
+app.use("/student", studentRouters);
 
 app.get("/", (req, res)=>{
     res.json({
