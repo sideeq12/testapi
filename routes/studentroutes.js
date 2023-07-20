@@ -39,10 +39,15 @@ router.route("/")
 })
 
 router.route("/:id")
-.get(( req, res)=>{
-    res.status(200).json({
-        msg : "success get"
-    })
+.get( async ( req, res)=>{
+    console.log("the id is ", req.params.id)
+    try { 
+        const { id  } = req.params;
+        const mystudent = await Model.findById("64b9600d7ed7e14f5c8a676e");
+        res.status(200).json(mystudent);
+    }catch(err){
+        console.log(err);
+    }
 })
 .post((req, res)=>{
     res.status(200).json({

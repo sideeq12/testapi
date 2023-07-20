@@ -22,7 +22,7 @@ app.get("/students", (req, res)=>{
 
 
 mongoose.connect("mongodb+srv://test:Newlayer12!@tritezcluster.uqtqk.mongodb.net/students?retryWrites=true&w=majority")
-.then(app.listen(3000, ()=>{
+.then(app.listen(3001, ()=>{
     console.log("connected to DB")
     console.log("server running on port :  3000")
 }))
