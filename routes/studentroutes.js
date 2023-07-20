@@ -3,10 +3,16 @@ const Model = require("../models/studentmodel");
 const router  = express.Router();
 
 router.route("/")
-.get(( req, res)=>{
-    res.status(200).json({
-        msg : "success get"
-    })
+.get(async ( req, res)=>{
+    try {
+        const students = await Model.find({});
+        res.status(200).json(students);
+
+    }catch(err){
+        res.status(500).json({
+            msg : err.message
+        })
+    }
 })
 .post( async (req, res)=>{
     const { first_name ,   last_name , other ,
