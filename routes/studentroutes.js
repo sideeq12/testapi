@@ -8,11 +8,15 @@ router.route("/")
         msg : "success get"
     })
 })
-.post((req, res)=>{
-    const { first_name , last_name , other } = req.body;
+.post( async (req, res)=>{
+    const { first_name ,   last_name , other ,
+        year_of_admission, matric, faculty ,
+     department , course_of_study,current_level,
+     profile_picture, hall_of_residence
+   } = req.body;
     try { 
-        const newStudent = Model.create(req.body);
-        res.status(200).send(newStudent);
+        const newStudent = await  Model.create(req.body);
+        res.status(200).json(newStudent);
     }catch(err){
         console.log(err);
     }

@@ -41,7 +41,7 @@ const studentSchema = new Schema({
         type : String,
         required : [true, "please enter a valid level"]
     }, 
-    Profile_picture : {
+    profile_picture : {
         type : String,
         required : [true, "please upload profile picture"]
     },
@@ -49,7 +49,8 @@ const studentSchema = new Schema({
         hall_name : String,
         block : String,
         room_number : Number,
-    } || Boolean,
+    } || Boolean
+}, {
     timestamps : true
 })
 
