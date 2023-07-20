@@ -21,7 +21,7 @@ const studentSchema = new Schema({
         type : String,
         required : [true, "please enter a valid  matriculation number"]
     },
-    year_admission : {
+    year_of_admission : {
         type : Number,
         required : [true, "please enter a valid year of admision"]
     },
@@ -41,7 +41,7 @@ const studentSchema = new Schema({
         type : String,
         required : [true, "please enter a valid level"]
     }, 
-    image : {
+    Profile_picture : {
         type : String,
         required : [true, "please upload profile picture"]
     },
