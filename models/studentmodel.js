@@ -23,19 +23,23 @@ const studentSchema = new mongoose.Schema({
     },
     faculty : {
         type : String,
-        required : [true, "please enter a valid user name"]
+        required : [true, "please enter a valid faculty"]
     },
     department :{
         type : String,
-        required : [true, "please enter a valid user name"]
+        required : [true, "please enter a valid department"]
     },
     course_of_study : {
         type : String,
-        required : [true, "please enter a valid user name"]
+        required : [true, "please enter a valid course of study"]
     },
     current_level : {
         type : String,
-        required : [true, "please enter a valid user name"]
+        required : [true, "please enter a valid level"]
+    }, 
+    image : {
+        type : String,
+        required : [true, "please upload profile picture"]
     },
     Hall_of_residence : {
         hall_name : String,
@@ -43,3 +47,6 @@ const studentSchema = new mongoose.Schema({
         room_number : Number,
     } || Boolean
 })
+
+
+module.exports = studentSchema;
