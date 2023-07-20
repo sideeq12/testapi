@@ -45,8 +45,11 @@ const studentSchema = new mongoose.Schema({
         hall_name : String,
         block : String,
         room_number : Number,
-    } || Boolean
+    } || Boolean,
+    timestamps : true
 })
 
+const studentModel  = mongoose.model("Students", studentSchema);
 
-module.exports = studentSchema;
+
+module.exports = studentModel;
