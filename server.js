@@ -1,4 +1,6 @@
 const express = require("express");
+const mongoose = require("mongoose");
+
 
 const app = express();
 
@@ -16,6 +18,11 @@ app.get("/students", (req, res)=>{
 
 
 
-app.listen(3000, ()=>{
-    console.log("server running on port : 3000")
+mongoose.connect("mongodb+srv://test:Newlayer12!@tritezcluster.uqtqk.mongodb.net/students?retryWrites=true&w=majority")
+.then(app.listen(3000, ()=>{
+    console.log("connected to DB")
+    console.log("server running on port :  3000")
+}))
+.catch((err)=>{
+    console.log(err)
 })
